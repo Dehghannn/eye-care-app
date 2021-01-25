@@ -15,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_messg->setIcon(QMessageBox::Warning);
     m_messg->setWindowTitle("Watch Out!");
     initIconTray();
+    QLocale locale(QLocale::English);
+    ui->intervalSpinBox->setLocale(locale);
 }
 
 MainWindow::~MainWindow() { delete ui; }

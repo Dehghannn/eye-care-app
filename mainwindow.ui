@@ -17,7 +17,8 @@
    <string>EyeCareApp</string>
   </property>
   <property name="windowIcon">
-   <iconset theme=":/etc/icon.png"/>
+   <iconset resource="src.qrc">
+    <normaloff>:/etc/icon.png</normaloff>:/etc/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -46,6 +47,7 @@
          <widget class="QSpinBox" name="intervalSpinBox">
           <property name="font">
            <font>
+            <family>Ubuntu</family>
             <pointsize>12</pointsize>
            </font>
           </property>
@@ -120,6 +122,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="src.qrc"/>
+ </resources>
  <connections/>
 </ui>
