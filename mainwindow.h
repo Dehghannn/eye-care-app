@@ -9,6 +9,8 @@
 #include <QMessageBox>
 #include <QSystemTrayIcon>
 #include <QLocale>
+#include <QFont>
+#include <QFontDatabase>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

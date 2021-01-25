@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     initIconTray();
     QLocale locale(QLocale::English);
     ui->intervalSpinBox->setLocale(locale);
+    QFontDatabase fontDB;
+    QFont font(fontDB.font("Ubuntu", "Regular", 8));
+    QApplication::setFont(font);
 }
 
 MainWindow::~MainWindow() { delete ui; }
