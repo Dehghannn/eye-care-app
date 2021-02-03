@@ -35,13 +35,13 @@ private slots:
   void on_startButton_clicked();
 
   void on_stopButton_clicked();
-  void on_tray_doubleClicked(QSystemTrayIcon::ActivationReason reason);
+  void tray_doubleClicked(QSystemTrayIcon::ActivationReason reason);
   /// @brief toggle between mainwindow show and hide
-  void on_show_hide();
+  void show_hide();
 
 public slots:
   /// @brief triggered by reminder each interval minutes
-  void on_timeLimit_reached();
+  void timeLimit_reached();
 
 private:
   Ui::MainWindow *ui;

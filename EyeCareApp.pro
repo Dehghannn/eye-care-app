@@ -9,10 +9,10 @@ CONFIG += c++11
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
-LIBS += /home/dehghannn/QtStatic/lib/libQt5Core.a
-LIBS += /home/dehghannn/QtStatic/lib/libQt5Widgets.a
-LIBS += /home/dehghannn/QtStatic/lib/libqtpcre2.a
-LIBS += /home/dehghannn/QtStatic/lib/libQt5Gui.a
+#LIBS += /home/dehghannn/QtStatic/lib/libQt5Core.a
+#LIBS += /home/dehghannn/QtStatic/lib/libQt5Widgets.a
+#LIBS += /home/dehghannn/QtStatic/lib/libqtpcre2.a
+#LIBS += /home/dehghannn/QtStatic/lib/libQt5Gui.a
 #QMAKE_LIBDIR += /home/dehghannn/QtStatic/lib/
 
 # You can also make your code fail to compile if it uses deprecated APIs.

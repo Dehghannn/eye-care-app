@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     reminder = new Reminder;
     connect(reminder, &Reminder::timeOut, this,
-            &MainWindow::on_timeLimit_reached);
+            &MainWindow::timeLimit_reached);
     m_messg = new QMessageBox;
     m_messg->setWindowFlag(Qt::WindowType::Tool);
     m_messg->setWindowFlag(Qt::WindowType::WindowStaysOnTopHint);
@@ -42,7 +42,7 @@ void MainWindow::on_saveButton_clicked() {
                 60000); ///< @todo change 10000 to 60000 after development
 }
 
-void MainWindow::on_timeLimit_reached() { m_messg->exec(); }
+void MainWindow::timeLimit_reached() { m_messg->exec(); }
 
 void MainWindow::on_startButton_clicked() {
     reminder->start();
@@ -59,13 +59,13 @@ void MainWindow::initIconTray() {
     m_tray_icon = new QSystemTrayIcon(QIcon(":/etc/icon.png"), this);
 
     connect(m_tray_icon, &QSystemTrayIcon::activated, this,
-            &MainWindow::on_tray_doubleClicked);
+            &MainWindow::tray_doubleClicked);
 
     QAction *quit_action = new QAction("Exit", m_tray_icon);
     connect(quit_action, &QAction::triggered, this, &MainWindow::close);
 
     QAction *show_action = new QAction("Show", m_tray_icon);
-    connect(show_action, &QAction::triggered, this, &MainWindow::on_show_hide);
+    connect(show_action, &QAction::triggered, this, &MainWindow::show_hide);
 
     QMenu *tray_icon_menu = new QMenu;
     tray_icon_menu->addAction(show_action);
@@ -74,17 +74,17 @@ void MainWindow::initIconTray() {
     m_tray_icon->setContextMenu(tray_icon_menu);
 }
 
-void MainWindow::on_tray_doubleClicked(
+void MainWindow::tray_doubleClicked(
         QSystemTrayIcon::ActivationReason reason) {
     if (reason) {
         if (reason != QSystemTrayIcon::DoubleClick)
             return;
     }
 
-    on_show_hide();
+    show_hide();
 }
 
-void MainWindow::on_show_hide() {
+void MainWindow::show_hide() {
     if (isVisible()) {
         hide();
     } else {
